@@ -289,3 +289,13 @@ section {
     max-width: 1200px;
     text-align: center;
 }
+
+.contato a {
+    color: #c5a880;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.contato a:hover {
+    text-decoration: underline;
+}
