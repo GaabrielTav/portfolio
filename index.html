@@ -1,144 +1,284 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+    <!-- ================= META ================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+    <meta name="description"
+        content="Portfólio de Gabriel, Designer Gráfico e UX/UI com formação em Engenharia de Software. Projetos, design e desenvolvimento front-end.">
+    <meta name="author" content="Gabriel">
+
+    <title>Gabriel | Portfólio</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
+    <!-- ================= NAVBAR ================= -->
     <header>
-        <nav class="navbar">
-            <div class="logo">Gabriel</div>
+        <nav class="navbar" aria-label="Navegação principal">
+
+            <a href="index.html" class="logo" aria-label="Voltar para página inicial">
+                <img src="assets/images/logo.png" alt="Logo Gabriel">
+            </a>
+
             <ul class="nav-links">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#design">Design</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#projetos">Projetos</a></li>
+                <li><a href="index.html#design">Design</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
             </ul>
+
         </nav>
     </header>
 
-   <section class="hero">
-        <div class="hero-content">
-         <h1>BIENVENIDO<br>À MINHA GALERIA</h1>
-         <p>Explore um pouco das minhas criações</p>
+    <main>
 
-         <div class="social-icons">
-             <a href="#"><i class="icon">IG</i></a>
-             <a href="#"><i class="icon">GH</i></a>
-             <a href="#"><i class="icon">IN</i></a>
-         </div>
-        </div>
-    </section>  
+        <!-- ================= HERO ================= -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>BIENVENIDO<br>À MINHA GALERIA</h1>
+                <p>Explore um pouco das minhas criações</p>
 
-    <section id="sobre" class="sobre fade-in">
-    <div class="sobre-container">
-        
-        <div class="sobre-texto">
-            <h2>Sobre Mim</h2>
-            <p>
-                Designer gráfico e UX/UI com formação em Engenharia de Software.
-                Já participei de projetos acadêmicos e pessoais nos quais pude
-                aplicar meus conhecimentos e vir a área. Por isso, quero fazer
-                parte de um time onde design e tecnologia caminham juntos.
-            </p>
+                <div class="social-icons">
 
-            <button class="btn-sobre">UM POUCO MAIS</button>
-        </div>
+                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <span class="icon">IG</span>
+                    </a>
 
-        <div class="sobre-imagem">
-            <img src="assets/images/profile.jpg" alt="Foto de perfil">
-        </div>
+                    <a href="https://github.com/GaabrielTav" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub">
+                        <span class="icon">GH</span>
+                    </a>
 
-    </div>
-</section>
-
-   <section id="projetos" class="projetos fade-in">
-    <div class="projetos-container">
-        <h2>Projetos</h2>
-
-        <div class="carrossel">
-
-            <button class="prev">&#10094;</button>
-
-            <div class="carrossel-wrapper">
-                <div class="carrossel-track">
-
-                    <div class="card">
-                        <h3>Projeto 1</h3>
-                        <p>Descrição do projeto</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Projeto 2</h3>
-                        <p>Descrição do projeto</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Projeto 3</h3>
-                        <p>Descrição do projeto</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Projeto 4</h3>
-                        <p>Descrição do projeto</p>
-                    </div>
+                    <a href="https://linkedin.com/in/gabriel-tavares-matos-72a761204/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn">
+                        <span class="icon">IN</span>
+                    </a>
 
                 </div>
             </div>
+        </section>
 
-            <button class="next">&#10095;</button>
+        <!-- ================= SOBRE ================= -->
+        <section id="sobre" class="sobre fade-in">
+            <div class="sobre-container">
 
+                <div class="sobre-texto">
+                    <h2>Sobre Mim</h2>
+                    <p>
+                        Designer gráfico e UX/UI com formação em Engenharia de Software.
+                        Já participei de projetos acadêmicos e pessoais onde pude aplicar
+                        meus conhecimentos na prática. Quero fazer parte de um time
+                        onde design e tecnologia caminham juntos.
+                    </p>
+
+                    <a href="sobre-mim.html" class="btn-sobre">
+                        UM POUCO MAIS
+                    </a>
+                </div>
+
+                <div class="sobre-imagem">
+                    <img src="assets/images/profile.jpg"
+                        alt="Foto de perfil de Gabriel"
+                        loading="lazy">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= PROJETOS ================= -->
+        <section id="projetos" class="projetos fade-in">
+            <div class="projetos-container">
+                <h2>Projetos</h2>
+
+                <div class="carrossel">
+
+                    <button class="prev" aria-label="Projeto anterior">
+                        &#10094;
+                    </button>
+
+                    <div class="carrossel-wrapper">
+                        <div class="carrossel-track">
+
+                            <a href="barbearia.html" class="card">
+                                <img src="assets/images/projeto1-thumb.jpg"
+                                    alt="Sistema para Barbearia"
+                                    loading="lazy">
+                                <h3>Sistema Barbearia</h3>
+                                <p>HTML • CSS • JS</p>
+                            </a>
+
+                            <a href="lagoa-tech.html" class="card">
+                                <img src="assets/images/projeto2-thumb.jpg"
+                                    alt="Projeto Lagoa Tech"
+                                    loading="lazy">
+                                <h3>Lagoa Tech</h3>
+                                <p>UX • UI • Design</p>
+                            </a>
+
+                            <a href="projeto3.html" class="card">
+                                <img src="assets/images/projeto3-thumb.jpg"
+                                    alt="Projeto 3"
+                                    loading="lazy">
+                                <h3>Projeto 3</h3>
+                                <p>HTML • CSS • JS</p>
+                            </a>
+
+                            <a href="projeto4.html" class="card">
+                                <img src="assets/images/projeto4-thumb.jpg"
+                                    alt="Projeto 4"
+                                    loading="lazy">
+                                <h3>Projeto 4</h3>
+                                <p>HTML • CSS • JS</p>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <button class="next" aria-label="Próximo projeto">
+                        &#10095;
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DESIGN ================= -->
+        <section id="design" class="design fade-in">
+            <h2>Design</h2>
+
+            <div class="design-grid">
+
+                <div class="design-item"
+                    data-img="assets/images/design1.jpg"
+                    data-title="Post Instagram"
+                    data-desc="Arte promocional para campanha digital.">
+
+                    <img src="assets/images/design1.jpg"
+                        alt="Post Instagram"
+                        loading="lazy">
+
+                    <div class="design-overlay">
+                        <h3>Post Instagram</h3>
+                        <p>Arte promocional para campanha digital.</p>
+                    </div>
+                </div>
+
+                <div class="design-item"
+                    data-img="assets/images/design2.jpg"
+                    data-title="Identidade Visual"
+                    data-desc="Criação de identidade para marca local.">
+
+                    <img src="assets/images/design2.jpg"
+                        alt="Identidade Visual"
+                        loading="lazy">
+
+                    <div class="design-overlay">
+                        <h3>Identidade Visual</h3>
+                        <p>Criação de identidade para marca local.</p>
+                    </div>
+                </div>
+
+                <div class="design-item"
+                    data-img="assets/images/design3.jpg"
+                    data-title="Banner Publicitário"
+                    data-desc="Peça gráfica para divulgação online.">
+
+                    <img src="assets/images/design3.jpg"
+                        alt="Banner Publicitário"
+                        loading="lazy">
+
+                    <div class="design-overlay">
+                        <h3>Banner Publicitário</h3>
+                        <p>Peça gráfica para divulgação online.</p>
+                    </div>
+                </div>
+
+                <div class="design-item"
+                    data-img="assets/images/design4.jpg"
+                    data-title="Cardápio Digital"
+                    data-desc="Layout moderno e funcional.">
+
+                    <img src="assets/images/design4.jpg"
+                        alt="Cardápio Digital"
+                        loading="lazy">
+
+                    <div class="design-overlay">
+                        <h3>Cardápio Digital</h3>
+                        <p>Layout moderno e funcional.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= CONTATO ================= -->
+        <section id="contato" class="contato fade-in">
+            <h2>Contato</h2>
+
+            <div class="contato-container">
+
+                <p>
+                    Email:
+                    <a href="mailto:gabrieltavares1matos@gmail.com">
+                        gabrieltavares1matos@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    LinkedIn:
+                    <a href="https://www.linkedin.com/in/gabriel-tavares-matos-72a761204/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        linkedin.com/in/gabriel-tavares-matos-72a761204/
+                    </a>
+                </p>
+
+                <p>
+                    GitHub:
+                    <a href="https://github.com/GaabrielTav"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        github.com/GaabrielTav
+                    </a>
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= MODAL PROJETOS ================= -->
+    <div class="modal" id="projectModal" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close-btn" aria-label="Fechar modal">&times;</span>
+            <div class="modal-body"></div>
         </div>
     </div>
-</section>
 
-
-
-   <section id="design" class="design fade-in">
-    <h2>Design</h2>
-
-    <div class="design-grid">
-
-        <div class="design-item"></div>
-        <div class="design-item"></div>
-        <div class="design-item"></div>
-        <div class="design-item"></div>
-
+    <!-- ================= LIGHTBOX ================= -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <span class="lightbox-close" aria-label="Fechar imagem">&times;</span>
+        <img class="lightbox-img" src="" alt="Imagem ampliada">
     </div>
-</section>
 
-
-<section id="contato" class="contato fade-in">
-    <h2>Contato</h2>
-
-    <div class="contato-container">
-        <p>
-            Email:
-            <a href="mailto:gabrieltavares1matos@gmail.com">
-                gabrieltavares1matos@gmail.com
-            </a>
-        </p>
-
-        <p>
-            LinkedIn:
-            <a href="https://www.linkedin.com/in/gabriel-tavares-matos-72a761204/" target="_blank" rel="noopener noreferrer">
-                linkedin.com/in/gabriel-tavares-matos-72a761204/
-            </a>
-        </p>
-
-        <p>
-            GitHub:
-            <a href="https://github.com/GaabrielTav" target="_blank" rel="noopener noreferrer">
-                github.com/GaabrielTav
-            </a>
-        </p>
+    <!-- ================= DESIGN MODAL ================= -->
+    <div class="design-modal" id="designModal" aria-hidden="true">
+        <span class="design-close" aria-label="Fechar">&times;</span>
+        <img class="design-modal-img" id="designModalImg" alt="">
+        <div class="design-modal-caption" id="designModalCaption"></div>
     </div>
-</section>
 
-
+    <!-- ================= SCRIPT ================= -->
     <script src="js/script.js"></script>
+
 </body>
+
 </html>
