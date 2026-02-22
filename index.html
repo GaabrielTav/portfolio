@@ -12,6 +12,7 @@
     <title>Gabriel | Portfólio</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
@@ -43,34 +44,41 @@
     <div class="menu-overlay" id="menuOverlay"></div>
     <main>
 
-        <!-- ================= HERO ================= -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>BIENVENIDO<br>À MINHA GALERIA</h1>
-                <p>Explore um pouco das minhas criações</p>
+  <!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-badge">Portfólio Digital</span>
 
-                <div class="social-icons">
+        <h1>
+            BIENVENIDO<br>
+            <span>À MINHA GALERIA</span>
+        </h1>
 
-                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Instagram">
-                        <span class="icon">IG</span>
-                    </a>
+        <p>
+            Explore minhas criações, experiências digitais
+            e projetos desenvolvidos com foco em design e performance.
+        </p>
 
-                    <a href="https://github.com/GaabrielTav" target="_blank" rel="noopener noreferrer"
-                        aria-label="GitHub">
-                        <span class="icon">GH</span>
-                    </a>
+        <div class="social-icons">
 
-                    <a href="https://linkedin.com/in/gabriel-tavares-matos-72a761204/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn">
-                        <span class="icon">IN</span>
-                    </a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i data-lucide="instagram" class="icon"></i>
+            </a>
 
-                </div>
-            </div>
-        </section>
+            <a href="https://github.com/GaabrielTav" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i data-lucide="github" class="icon"></i>
+            </a>
+
+            <a href="https://linkedin.com/in/gabriel-tavares-matos-72a761204/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="LinkedIn">
+                <i data-lucide="linkedin" class="icon"></i>
+            </a>
+
+</div>
+    </div>
+</section>
 
         <!-- ================= SOBRE ================= -->
         <section id="sobre" class="sobre fade-in">
@@ -284,6 +292,7 @@
 
     <!-- ================= SCRIPT ================= -->
     <script src="js/script.js"></script>
+    <script>lucide.createIcons();</script>
 
 </body>
 
