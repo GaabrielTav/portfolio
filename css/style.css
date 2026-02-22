@@ -23,51 +23,90 @@ section {
     scroll-margin-top: 120px; /* evita esconder seção atrás da navbar */
 }
 
-/* ===================================================
-   NAVBAR
-=================================================== */
+/* =====================================
+   NAVBAR 
+===================================== */
 
 header {
-    height: 80px;
+    height: 70px;
 }
 
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2000;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1100px;
+
+    height: 60px;
+    padding: 0 30px;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
-    padding: 15px 60px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+
+    z-index: 3000;
 }
+
+/* LOGO */
 
 .logo img {
-    height: 40px;
+    height: 32px;
     width: auto;
-    display: block;
 }
+
+/* LINKS */
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ccc;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+/* Hover elegante */
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: #c5a880;
     transition: 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #c5a880;
+.nav-links a:hover {
+    color: #fff;
 }
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: #fff;
+}
+
+
 
 /* ===================================================
    HERO
@@ -459,4 +498,104 @@ header {
         flex-direction: column;
         text-align: center;
     }
+}
+
+/* ===============================
+   MOBILE MENU
+=============================== */
+
+/* ===============================
+   MOBILE MENU PREMIUM REFINADO
+=============================== */
+
+/* Botão hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s ease;
+}
+
+/* Overlay */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.35s ease;
+    z-index: 2500;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 90px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-25px);
+
+        width: 90%;
+        max-width: 380px;
+
+        padding: 45px 30px 30px;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+
+        background: rgba(18, 18, 18, 0.95);
+        backdrop-filter: blur(18px);
+
+        border-radius: 28px;
+        border: 1px solid rgba(255,255,255,0.06);
+
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.35s ease;
+
+        z-index: 3000;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: all;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        color: #eaeaea;
+        padding: 8px 0;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #c5a880;
+        transform: scale(1.05);
+    }
+
 }

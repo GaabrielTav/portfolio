@@ -7,12 +7,58 @@ document.addEventListener("DOMContentLoaded", () => {
     initCarousel();
     initFadeIn();
     initActiveNav();
-    initProjectModal();
     initLightbox();
     initDesignModal();
+    initMobileMenu();
 
 });
 
+
+/* ===================================================
+   MENU MOBILE
+=================================================== */
+
+function initMobileMenu() {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    if (!menuToggle || !navMenu || !menuOverlay) return;
+
+    function openMenu() {
+        navMenu.classList.add("active");
+        menuOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+        navMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+        document.body.style.overflow = "auto";
+    }
+
+    function toggleMenu() {
+        if (navMenu.classList.contains("active")) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    }
+
+    menuToggle.addEventListener("click", toggleMenu);
+    menuOverlay.addEventListener("click", closeMenu);
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+            closeMenu();
+        }
+    });
+}
 
 /* ===================================================
    CARROSSEL
@@ -38,10 +84,8 @@ function initCarousel() {
 
     function updateCarousel() {
         visibleCards = getVisibleCards();
-
         const cardWidth = cards[0].offsetWidth + 40;
         track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-
         updateButtons();
     }
 
@@ -77,7 +121,7 @@ function initCarousel() {
 
 
 /* ===================================================
-   FADE-IN COM INTERSECTION OBSERVER
+   FADE-IN
 =================================================== */
 
 function initFadeIn() {
@@ -91,16 +135,14 @@ function initFadeIn() {
                 entry.target.classList.add('visible');
             }
         });
-    }, {
-        threshold: 0.2
-    });
+    }, { threshold: 0.2 });
 
     faders.forEach(section => observer.observe(section));
 }
 
 
 /* ===================================================
-   NAVBAR ATIVA NO SCROLL
+   NAVBAR ATIVA
 =================================================== */
 
 function initActiveNav() {
@@ -116,7 +158,6 @@ function initActiveNav() {
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 150;
-
             if (window.scrollY >= sectionTop) {
                 current = section.getAttribute("id");
             }
@@ -124,88 +165,12 @@ function initActiveNav() {
 
         navLinks.forEach(link => {
             link.classList.remove("active");
-
             if (current && link.getAttribute("href").includes(current)) {
                 link.classList.add("active");
             }
         });
 
     });
-}
-
-
-/* ===================================================
-   MODAL DE PROJETOS
-=================================================== */
-
-function initProjectModal() {
-
-    const modal = document.getElementById("projectModal");
-    const modalBody = document.querySelector(".modal-body");
-    const closeBtn = document.querySelector(".close-btn");
-    const cards = document.querySelectorAll(".card");
-
-    if (!modal || !modalBody || !closeBtn || !cards.length) return;
-
-    const projectData = {
-        sistemaBarbearia: {
-            title: "Sistema de Agendamento - Barbearia",
-            about: `
-                O cliente precisava de um sistema sob medida, fácil de usar,
-                com interface moderna e organização de processos internos.
-                Tudo foi desenvolvido do zero.
-            `,
-            images: [
-                "assets/images/barbearia1.png",
-                "assets/images/barbearia2.png",
-                "assets/images/barbearia3.png",
-                "assets/images/barbearia4.png"
-            ]
-        }
-    };
-
-    cards.forEach(card => {
-        card.addEventListener("click", (e) => {
-
-            const key = card.getAttribute("data-project");
-            const project = projectData[key];
-
-            if (!project) return;
-
-            e.preventDefault(); // evita navegação
-
-            modalBody.innerHTML = `
-                <h2>${project.title}</h2>
-
-                <div class="modal-section">
-                    <h3>Sobre o Projeto</h3>
-                    <p>${project.about}</p>
-                </div>
-
-                <div class="modal-section">
-                    <h3>Imagens do Projeto</h3>
-                    <div class="modal-gallery">
-                        ${project.images.map(img => `
-                            <img src="${img}" alt="Imagem do projeto">
-                        `).join("")}
-                    </div>
-                </div>
-            `;
-
-            modal.style.display = "flex";
-            document.body.style.overflow = "hidden";
-        });
-    });
-
-    closeBtn.addEventListener("click", closeModal);
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-    });
-
-    function closeModal() {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
 }
 
 
@@ -258,16 +223,12 @@ function initDesignModal() {
     designItems.forEach(item => {
         item.addEventListener("click", () => {
 
-            const imgSrc = item.dataset.img;
-            const title = item.dataset.title;
-            const desc = item.dataset.desc;
-
             designModal.style.display = "flex";
-            designModalImg.src = imgSrc;
+            designModalImg.src = item.dataset.img;
 
             designModalCaption.innerHTML = `
-                <h3>${title}</h3>
-                <p>${desc}</p>
+                <h3>${item.dataset.title}</h3>
+                <p>${item.dataset.desc}</p>
             `;
 
             document.body.style.overflow = "hidden";
