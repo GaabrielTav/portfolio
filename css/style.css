@@ -823,28 +823,28 @@ section {
 @media (max-width: 768px) {
 
     .design {
-        padding: 90px 20px;
+        padding: 100px 20px;
     }
 
     .design h2 {
         font-size: 2rem;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
     .design-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 
     .design-item {
-        border-radius: 18px;
+        border-radius: 24px;
     }
 
     .design-item img {
-        height: 180px; /* menor para caber 2 colunas */
+        height: 260px; /* maior para dar impacto */
     }
 
-    /* Remove hover no mobile */
+    /* Remove efeito hover no mobile */
     .design-item:hover {
         transform: none;
         box-shadow: none;
@@ -856,22 +856,24 @@ section {
 
     /* Overlay sempre visível */
     .design-overlay {
-        padding: 15px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 25px 20px;
         background: linear-gradient(
             to top,
             rgba(0,0,0,0.9),
-            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.4),
             transparent
         );
     }
 
     .design-overlay h3 {
-        font-size: 0.95rem;
-        margin-bottom: 5px;
+        font-size: 1.1rem;
     }
 
     .design-overlay p {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         opacity: 0.75;
     }
 
