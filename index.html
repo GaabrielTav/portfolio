@@ -312,13 +312,26 @@
         <img class="lightbox-img" src="" alt="Imagem ampliada">
     </div>
 
-    <!-- ================= DESIGN MODAL ================= -->
-    <div class="design-modal" id="designModal" aria-hidden="true">
-        <span class="design-close" aria-label="Fechar">&times;</span>
-        <img class="design-modal-img" id="designModalImg" alt="">
-        <div class="design-modal-caption" id="designModalCaption"></div>
+<!-- ================= DESIGN VIEWER ================= -->
+
+<div id="designViewer" class="design-viewer">
+
+    <span class="viewer-close">&times;</span>
+
+    <button class="viewer-prev">&#10094;</button>
+
+    <div class="viewer-content">
+        <img class="viewer-img" src="" alt="Design ampliado">
+
+        <div class="viewer-info">
+            <h3 class="viewer-title"></h3>
+            <p class="viewer-desc"></p>
+        </div>
     </div>
 
+    <button class="viewer-next">&#10095;</button>
+
+</div>
     <!-- ================= SCRIPT ================= -->
     <script src="js/script.js"></script>
     <script>lucide.createIcons();</script>

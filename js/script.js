@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initFadeIn();
     initActiveNav();
     initLightbox();
-    initDesignModal();
     initMobileMenu();
 
 });
@@ -209,42 +208,75 @@ function initLightbox() {
 }
 
 
-/* ===================================================
-   MODAL DESIGN
-=================================================== */
+/* ================================
+   DESIGN VIEWER COM DESCRIÇÃO
+================================ */
 
-function initDesignModal() {
+const designItems = document.querySelectorAll(".design-item");
+const viewer = document.getElementById("designViewer");
+const viewerImg = document.querySelector(".viewer-img");
+const viewerTitle = document.querySelector(".viewer-title");
+const viewerDesc = document.querySelector(".viewer-desc");
+const viewerClose = document.querySelector(".viewer-close");
+const viewerNext = document.querySelector(".viewer-next");
+const viewerPrev = document.querySelector(".viewer-prev");
 
-    const designItems = document.querySelectorAll(".design-item");
-    const designModal = document.getElementById("designModal");
-    const designModalImg = document.getElementById("designModalImg");
-    const designModalCaption = document.getElementById("designModalCaption");
-    const designClose = document.querySelector(".design-close");
+let currentDesignIndex = 0;
+let designData = [];
 
-    if (!designItems.length || !designModal) return;
-
-    designItems.forEach(item => {
-        item.addEventListener("click", () => {
-
-            designModal.style.display = "flex";
-            designModalImg.src = item.dataset.img;
-
-            designModalCaption.innerHTML = `
-                <h3>${item.dataset.title}</h3>
-                <p>${item.dataset.desc}</p>
-            `;
-
-            document.body.style.overflow = "hidden";
-        });
+designItems.forEach((item, index) => {
+    designData.push({
+        img: item.getAttribute("data-img"),
+        title: item.getAttribute("data-title"),
+        desc: item.getAttribute("data-desc")
     });
 
-    designClose.addEventListener("click", closeDesignModal);
-    designModal.addEventListener("click", (e) => {
-        if (e.target === designModal) closeDesignModal();
+    item.addEventListener("click", () => {
+        currentDesignIndex = index;
+        openViewer();
     });
+});
 
-    function closeDesignModal() {
-        designModal.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
+function openViewer() {
+    viewer.classList.add("active");
+    updateViewer();
+    document.body.style.overflow = "hidden";
 }
+
+function closeViewer() {
+    viewer.classList.remove("active");
+    document.body.style.overflow = "auto";
+}
+
+function updateViewer() {
+    viewerImg.src = designData[currentDesignIndex].img;
+    viewerTitle.textContent = designData[currentDesignIndex].title;
+    viewerDesc.textContent = designData[currentDesignIndex].desc;
+}
+
+function nextImage() {
+    currentDesignIndex = (currentDesignIndex + 1) % designData.length;
+    updateViewer();
+}
+
+function prevImage() {
+    currentDesignIndex =
+        (currentDesignIndex - 1 + designData.length) % designData.length;
+    updateViewer();
+}
+
+viewerNext.addEventListener("click", nextImage);
+viewerPrev.addEventListener("click", prevImage);
+viewerClose.addEventListener("click", closeViewer);
+
+viewer.addEventListener("click", (e) => {
+    if (e.target === viewer) closeViewer();
+});
+
+document.addEventListener("keydown", (e) => {
+    if (!viewer.classList.contains("active")) return;
+
+    if (e.key === "ArrowRight") nextImage();
+    if (e.key === "ArrowLeft") prevImage();
+    if (e.key === "Escape") closeViewer();
+});
