@@ -2125,3 +2125,553 @@ section {
     color: #000;
 }
 }
+
+
+/* ===================================================
+   PÁGINA PESSOAL - REFINADA COM IDENTIDADE
+=================================================== */
+
+.pagina-pessoal {
+    max-width: 900px;
+    margin: 140px auto 100px auto;
+    padding: 0 20px;
+    line-height: 1.8;
+    color: #fff;
+}
+
+/* TÍTULO PRINCIPAL */
+
+.pagina-pessoal h1 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.pagina-pessoal h1::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #c5a880, #2c5364);
+    display: block;
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+/* INTRO */
+
+.intro {
+    font-size: 1.15rem;
+    opacity: 0.85;
+    margin-bottom: 50px;
+}
+
+/* SUBTÍTULOS */
+
+.pagina-pessoal h2 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    color: #c5a880;
+    position: relative;
+}
+
+.pagina-pessoal h2::before {
+    content: "";
+    width: 6px;
+    height: 20px;
+    background: #2c5364; /* verde/azul sutil */
+    display: inline-block;
+    margin-right: 12px;
+    border-radius: 2px;
+}
+
+/* PARÁGRAFOS */
+
+.pagina-pessoal p {
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+/* CONQUISTAS */
+
+.conquistas {
+    list-style: none;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.conquistas li {
+    margin-bottom: 15px;
+    padding-left: 28px;
+    position: relative;
+    opacity: 0.9;
+}
+
+.conquistas li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c5a880;
+    font-size: 1.4rem;
+}
+
+/* CTA */
+
+.cta-pessoal {
+    margin-top: 60px;
+}
+
+.btn-contato {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 1px solid #c5a880;
+    color: #c5a880;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.btn-contato:hover {
+    background: #c5a880;
+    color: #000;
+}
+
+/* ===================================================
+   PROJETO INDIVIDUAL - CASE UX
+=================================================== */
+
+.projeto-individual {
+    padding: 140px 10% 100px 10%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* HEADER DO CASE */
+
+.case-header {
+    margin-bottom: 80px;
+}
+
+.projeto-individual h1 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+}
+
+.projeto-individual h1::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #c5a880;
+    display: block;
+    margin-top: 15px;
+}
+
+.projeto-descricao {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin-bottom: 30px;
+}
+
+/* BADGES */
+
+.tech-badges {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tech-badges span {
+    border: 1px solid #c5a880;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.tech-badges span:hover {
+    background: #c5a880;
+    color: #000;
+}
+
+/* SEÇÕES */
+
+.case-section {
+    margin-top: 70px;
+}
+
+.case-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #c5a880;
+}
+
+.case-section p {
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+/* LISTA */
+
+.case-list {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.case-list li {
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+/* GALERIA */
+
+.case-gallery {
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+
+    justify-items: center;
+}
+
+/* Imagens estilo mockup mobile */
+
+.case-gallery img {
+    width: 100%;
+    max-width: 260px;
+    height: 520px;
+
+    object-fit: cover;
+    border-radius: 28px;
+
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    transition: 0.4s ease;
+}
+
+.case-gallery img:hover {
+    transform: translateY(-12px) scale(1.02);
+}
+
+
+/* ===================================================
+   MOODFLIX - CASE PROFISSIONAL
+=================================================== */
+
+.projeto-individual {
+    padding: 140px 10% 100px 10%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.projeto-individual h1 {
+    font-size: 2.6rem;
+    margin-bottom: 25px;
+}
+
+.projeto-individual h1::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #c5a880;
+    display: block;
+    margin-top: 15px;
+}
+
+.projeto-descricao {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin-bottom: 40px;
+}
+
+/* SEÇÕES */
+
+.case-section {
+    margin-top: 80px;
+}
+
+.case-section h2 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    color: #c5a880;
+}
+
+.case-section p {
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+/* LISTAS */
+
+.case-list {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.case-list li {
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+/* BADGES */
+
+.tech-badges {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tech-badges span {
+    border: 1px solid #c5a880;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.tech-badges span:hover {
+    background: #c5a880;
+    color: #000;
+}
+
+/* ===================================================
+   LAGOA TECH - CASE PREMIUM
+=================================================== */
+
+.projeto-individual {
+    padding: 140px 10% 100px 10%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.case-header {
+    margin-bottom: 90px;
+}
+
+.projeto-individual h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.projeto-individual h1::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #c5a880;
+    display: block;
+    margin-top: 15px;
+}
+
+.projeto-descricao {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin-bottom: 30px;
+}
+
+/* SEÇÕES */
+
+.case-section {
+    margin-top: 80px;
+}
+
+.case-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #c5a880;
+}
+
+.case-section p {
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+/* PROCESSO */
+
+.processo-etapas {
+    display: grid;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.etapa {
+    padding: 25px;
+    border-left: 3px solid #c5a880;
+    background: rgba(255,255,255,0.02);
+    border-radius: 8px;
+}
+
+.etapa h3 {
+    margin-bottom: 15px;
+}
+
+/* GALERIA */
+
+.case-gallery {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    justify-items: center;
+}
+
+.case-gallery img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    transition: 0.4s ease;
+}
+
+.case-gallery img:hover {
+    transform: translateY(-10px);
+}
+
+/* BOTÃO PROTÓTIPO */
+
+.projeto-links {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.btn-prototipo {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1px solid #c5a880;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn-prototipo:hover {
+    background: #c5a880;
+    color: #000;
+}
+
+
+@media (max-width: 768px) {
+
+    .projeto-individual {
+        padding: 120px 8% 80px 8%;
+    }
+
+    .projeto-individual h1 {
+        font-size: 2.1rem;
+    }
+
+    .case-gallery {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .processo-etapas {
+        gap: 25px;
+    }
+}
+
+/* ===================================================
+   BARBEARIA SAAS - DASHBOARD CASE
+=================================================== */
+
+.projeto-individual {
+    padding: 140px 10% 100px 10%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+
+.case-header {
+    margin-bottom: 90px;
+}
+
+.projeto-individual h1 {
+    font-size: 2.7rem;
+    margin-bottom: 20px;
+}
+
+.projeto-individual h1::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #c5a880;
+    display: block;
+    margin-top: 15px;
+}
+
+.projeto-descricao {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    margin-bottom: 30px;
+}
+
+/* SEÇÕES */
+
+.case-section {
+    margin-top: 80px;
+}
+
+.case-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #c5a880;
+}
+
+.case-section p {
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+/* LISTA */
+
+.case-list {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.case-list li {
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+/* GALERIA DASHBOARD */
+
+.dashboard-gallery {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.dashboard-gallery img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+    transition: 0.4s ease;
+}
+
+.dashboard-gallery img:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+
+@media (max-width: 768px) {
+
+    .projeto-individual {
+        padding: 120px 8% 80px 8%;
+    }
+
+    .projeto-individual h1 {
+        font-size: 2rem;
+    }
+
+    .dashboard-gallery {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
