@@ -19,46 +19,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function initMobileMenu() {
 
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
-    const menuOverlay = document.getElementById("menuOverlay");
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
 
-    if (!menuToggle || !navMenu || !menuOverlay) return;
+if (!menuToggle || !navMenu) return;
 
-    function openMenu() {
-        navMenu.classList.add("active");
-        menuOverlay.classList.add("active");
-        document.body.style.overflow = "hidden";
-    }
+menuToggle.addEventListener("click", () => {
 
-    function closeMenu() {
+    navMenu.classList.toggle("active");
+    menuToggle.classList.toggle("active");
+
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+
         navMenu.classList.remove("active");
-        menuOverlay.classList.remove("active");
-        document.body.style.overflow = "auto";
-    }
+        menuToggle.classList.remove("active");
 
-    function toggleMenu() {
-        if (navMenu.classList.contains("active")) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
-    }
-
-    menuToggle.addEventListener("click", toggleMenu);
-    menuOverlay.addEventListener("click", closeMenu);
-
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", closeMenu);
     });
+});
 
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 768) {
-            closeMenu();
-        }
-    });
 }
-
 
 
 
@@ -154,27 +136,43 @@ function initActiveNav() {
 
     if (!sections.length || !navLinks.length) return;
 
-    window.addEventListener("scroll", () => {
+    function updateActiveLink() {
 
-        let current = "";
+        let currentSection = "";
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 150;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute("id");
+
+            const sectionTop = section.offsetTop - 180;
+            const sectionHeight = section.offsetHeight;
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionTop + sectionHeight
+            ) {
+                currentSection = section.getAttribute("id");
             }
+
         });
 
         navLinks.forEach(link => {
+
             link.classList.remove("active");
-            if (current && link.getAttribute("href").includes(current)) {
+
+            const href = link.getAttribute("href");
+
+            if (currentSection && href.includes(currentSection)) {
                 link.classList.add("active");
             }
+
         });
 
-    });
-}
+    }
 
+    window.addEventListener("scroll", updateActiveLink);
+
+    // Executa ao carregar a página
+    updateActiveLink();
+}
 
 /* ===================================================
    LIGHTBOX

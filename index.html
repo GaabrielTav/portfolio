@@ -8,6 +8,10 @@
     <meta name="description"
         content="Portfólio de Gabriel, Designer Gráfico e UX/UI com formação em Engenharia de Software. Projetos, design e desenvolvimento front-end.">
     <meta name="author" content="Gabriel">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <title>Gabriel | Portfólio</title>
 
@@ -18,20 +22,32 @@
 <body>
 
     <!-- ================= NAVBAR ================= -->
-    <header>
-        <nav class="navbar">
+<header>
+    <nav class="navbar">
 
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Logo Gabriel">
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Logo Gabriel">
+        </a>
+
+        <!-- LINKS -->
+        <ul class="nav-links" id="navMenu">
+
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#linguagens">Linguagens</a></li>
+            <li><a href="#design">Designs</a></li>
+            <li><a href="#contato">Contato</a></li>
+
+
+        </ul>
+
+        <!-- DIREITA -->
+        <div class="nav-right">
+
+            <a href="assets/curriculo.pdf" download class="btn-cv">
+                Currículo
             </a>
-
-            <ul class="nav-links" id="navMenu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="index.html#sobre">Sobre</a></li>
-                <li><a href="index.html#projetos">Projetos</a></li>
-                <li><a href="index.html#design">Design</a></li>
-                <li><a href="index.html#contato">Contato</a></li>
-            </ul>
 
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
@@ -39,24 +55,30 @@
                 <span></span>
             </div>
 
-        </nav>
-    </header>
-    <div class="menu-overlay" id="menuOverlay"></div>
+        </div>
+
+    </nav>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
     
 
   <!-- ================= HERO ================= -->
 <section class="hero">
     <div class="hero-content">
-        <span class="hero-badge">Portfólio Digital</span>
+
+        <span class="hero-badge">UX/UI Designer & Android Developer</span>
 
         <h1>
-            BIENVENIDO<br>
-            <span>À MINHA GALERIA</span>
+            Gabriel Tavares<br>
+            <span>Crio Apps Android e Experiências Digitais</span>
         </h1>
 
         <p>
-            Explore minhas criações, experiências digitais
-            e projetos desenvolvidos com foco em design e performance.
+            Transformo ideias em produtos digitais funcionais.
+            Do design da interface ao desenvolvimento Android,
+            construo aplicativos focados em usabilidade, performance
+            e impacto real para o usuário.
         </p>
 
         <div class="social-icons">
@@ -76,7 +98,8 @@
                 <i data-lucide="linkedin" class="icon"></i>
             </a>
 
-</div>
+        </div>
+
     </div>
 </section>
 
