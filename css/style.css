@@ -1670,31 +1670,102 @@ line-height:1.7;
 
 }
 
+.design-frame img{
+    transition: opacity 0.4s ease;
+}
 
 /* ===================================================
-   RESPONSIVO MOBILE
+   RESPONSIVO MOBILE - DESIGN SHOWCASE
 =================================================== */
 
 @media (max-width:768px){
 
 .design-showcase{
-
-padding:100px 20px;
-
+    padding:100px 20px;
 }
+
+/* container */
+
+.design-container{
+    text-align:center;
+}
+
+/* frame */
 
 .design-frame{
-
-padding:12px;
-
+    padding:12px;
+    border-radius:12px;
 }
+
+/* imagem */
+
+.design-frame img{
+    width:100%;
+    max-height:420px;
+    object-fit:cover;
+
+    border-radius:8px;
+
+    transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+/* leve interação */
+
+.design-frame img:active{
+    transform:scale(0.98);
+}
+
+/* botões */
 
 .design-prev,
 .design-next{
 
-width:40px;
-height:40px;
+width:48px;
+height:48px;
 
+font-size:18px;
+
+/* melhor acessibilidade */
+display:flex;
+align-items:center;
+justify-content:center;
+
+/* posição */
+
+top:50%;
+transform:translateY(-50%);
+
+/* visual */
+
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(6px);
+
+}
+
+/* posição lateral */
+
+.design-prev{
+    left:5px;
+}
+
+.design-next{
+    right:5px;
+}
+
+/* feedback visual */
+
+.design-prev:active,
+.design-next:active{
+    transform:translateY(-50%) scale(0.95);
+}
+
+/* descrição */
+
+.design-desc{
+    margin-top:30px;
+    font-size:0.95rem;
+    line-height:1.7;
+    padding:0 10px;
 }
 
 }

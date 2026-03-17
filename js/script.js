@@ -278,3 +278,60 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") prevImage();
     if (e.key === "Escape") closeViewer();
 });
+
+
+/* ================================
+   DESIGN SHOWCASE
+================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+const images = [
+    "assets/design/design-desc1.jpg",
+    "assets/design/design-desc2.jpg",
+    "assets/design/design-desc3.jpg",
+    "assets/design/design-desc4.jpg",
+    "assets/design/design-desc5.jpg"
+];
+
+let currentIndex = 0;
+
+const imgElement = document.getElementById("design-image");
+const prevBtn = document.querySelector(".design-prev");
+const nextBtn = document.querySelector(".design-next");
+
+function updateImage() {
+    imgElement.src = images[currentIndex];
+}
+
+nextBtn.addEventListener("click", () => {
+    currentIndex++;
+
+    if (currentIndex >= images.length) {
+        currentIndex = 0;
+    }
+
+    updateImage();
+});
+
+prevBtn.addEventListener("click", () => {
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+    }
+
+    updateImage();
+});
+
+
+function updateImage() {
+    imgElement.style.opacity = 0;
+
+    setTimeout(() => {
+        imgElement.src = images[currentIndex];
+        imgElement.style.opacity = 1;
+    }, 200);
+}
+
+});
