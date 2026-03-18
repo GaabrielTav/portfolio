@@ -9,78 +9,150 @@
 
 <body>
 
-    <header>
-        <nav class="navbar">
+<!-- ================= NAVBAR ================= -->
+<header>
+    <nav class="navbar">
 
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Logo Gabriel">
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Logo Gabriel">
+        </a>
+
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#projetos">Projetos</a></li>
+            <li><a href="index.html#linguagens">Linguagens</a></li>
+            <li><a href="index.html#design">Designs</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="assets/CURRICULOGABRIELTAVARES.pdf" download class="btn-cv">
+                Currículo
             </a>
-
-            <ul class="nav-links" id="navMenu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="index.html#sobre">Sobre</a></li>
-                <li><a href="index.html#projetos">Projetos</a></li>
-                <li><a href="index.html#design">Design</a></li>
-                <li><a href="index.html#contato">Contato</a></li>
-            </ul>
 
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+        </div>
 
-        </nav>
-    </header>
+    </nav>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- ================= MAIN ================= -->
 
 <main class="projeto-individual">
 
+    <!-- ================= HEADER ================= -->
     <div class="case-header">
-        <h1>Barbearia App — Versão Mobile</h1>
+
+        <span class="section-badge">CASE STUDY</span>
+
+        <h1>Barbearia App</h1>
 
         <p class="projeto-descricao">
-            Aplicativo desenvolvido para clientes realizarem agendamentos de forma rápida,
-            acompanhar horários marcados e visualizar histórico de cortes.
-            O foco principal foi simplicidade, clareza e experiência intuitiva.
+            Aplicativo mobile desenvolvido para simplificar o processo de agendamento
+            em barbearias, oferecendo uma experiência rápida, intuitiva e sem fricção.
+            O foco do projeto foi eliminar dependência de mensagens e transformar o fluxo
+            em uma jornada digital fluida e previsível.
         </p>
 
         <div class="tech-badges">
             <span>UX/UI</span>
             <span>Mobile First</span>
-            <span>Fluxo de Agendamento</span>
+            <span>Agendamento</span>
             <span>Prototipação</span>
         </div>
+
     </div>
 
+    <!-- ================= PROBLEMA ================= -->
     <section class="case-section">
+
         <h2>Problema</h2>
+
         <p>
-            Clientes dependiam de mensagens via WhatsApp para marcar horário,
-            gerando atrasos, conflitos de agenda e falta de organização.
+            O processo de agendamento dependia de mensagens via WhatsApp,
+            resultando em atrasos, falhas de comunicação e conflitos de horário.
         </p>
+
+        <p>
+            A ausência de um sistema estruturado impactava diretamente
+            a experiência do cliente e a organização do negócio.
+        </p>
+
     </section>
 
+    <!-- ================= SOLUÇÃO ================= -->
     <section class="case-section">
+
         <h2>Solução</h2>
-        <p>Criação de uma interface mobile onde o cliente pode:</p>
+
+        <p>
+            Foi projetado um aplicativo mobile com foco em usabilidade,
+            reduzindo o número de etapas e tornando o fluxo de agendamento
+            simples, rápido e intuitivo.
+        </p>
 
         <ul class="case-list">
-            <li>Selecionar barbeiro</li>
-            <li>Escolher tipo de serviço</li>
-            <li>Agendar horário disponível</li>
-            <li>Acompanhar status do atendimento</li>
-            <li>Visualizar histórico de cortes</li>
+            <li>Seleção de barbeiro de forma visual e direta</li>
+            <li>Escolha de serviços com informações claras</li>
+            <li>Agendamento em poucos passos</li>
+            <li>Visualização de horários disponíveis em tempo real</li>
+            <li>Acompanhamento e histórico de atendimentos</li>
         </ul>
+
     </section>
 
+    <!-- ================= EXPERIÊNCIA (DIFERENCIAL) ================= -->
     <section class="case-section">
-        <h2>Galeria</h2>
+
+        <h2>Experiência do Usuário</h2>
+
+        <p>
+            O projeto foi desenvolvido com abordagem mobile first,
+            priorizando clareza visual, navegação simples e redução de esforço cognitivo.
+        </p>
+
+        <p>
+            Cada etapa do fluxo foi pensada para evitar dúvidas,
+            guiando o usuário de forma natural até a conclusão do agendamento.
+        </p>
+
+    </section>
+
+    <!-- ================= RESULTADO ================= -->
+    <section class="case-section">
+
+        <h2>Resultado</h2>
+
+        <p>
+            A solução reduz significativamente o tempo necessário para agendar um serviço,
+            melhora a organização da agenda e proporciona uma experiência mais profissional
+            para o cliente.
+        </p>
+
+        <p>
+            O aplicativo transforma um processo informal em uma jornada digital estruturada,
+            aumentando eficiência e satisfação do usuário.
+        </p>
+
+    </section>
+
+    <!-- ================= GALERIA ================= -->
+    <section class="case-section">
+
+        <h2>Interface do Aplicativo</h2>
 
         <div class="case-gallery">
-            <img src="assets/images/mobile1.jpg" alt="Tela inicial mobile">
-            <img src="assets/images/mobile2.jpg" alt="Agendamento mobile">
-            <img src="assets/images/mobile3.jpg" alt="Histórico mobile">
+            <img src="assets/images/mobile1.jpg" alt="Tela inicial do aplicativo">
+            <img src="assets/images/mobile2.jpg" alt="Tela de agendamento">
+            <img src="assets/images/mobile3.jpg" alt="Tela de histórico">
         </div>
+
     </section>
 
 </main>

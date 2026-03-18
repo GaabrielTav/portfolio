@@ -9,20 +9,32 @@
 
 <body>
 
-    <header>
-        <nav class="navbar">
+<!-- ================= NAVBAR ================= -->
+<header>
+    <nav class="navbar">
 
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Logo Gabriel">
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Logo Gabriel">
+        </a>
+
+        <!-- LINKS -->
+        <ul class="nav-links" id="navMenu">
+
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#projetos">Projetos</a></li>
+            <li><a href="index.html#linguagens">Linguagens</a></li>
+            <li><a href="index.html#design">Designs</a></li> <!-- corrigido -->
+            <li><a href="index.html#contato">Contato</a></li>
+
+        </ul>
+
+        <!-- DIREITA -->
+        <div class="nav-right">
+
+            <a href="assets/CURRICULOGABRIELTAVARES.pdf" download class="btn-cv">
+                Currículo
             </a>
-
-            <ul class="nav-links" id="navMenu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="index.html#sobre">Sobre</a></li>
-                <li><a href="index.html#projetos">Projetos</a></li>
-                <li><a href="index.html#design">Design</a></li>
-                <li><a href="index.html#contato">Contato</a></li>
-            </ul>
 
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
@@ -30,19 +42,26 @@
                 <span></span>
             </div>
 
-        </nav>
-    </header>
+        </div>
+
+    </nav>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- ================= MAIN ================= -->
 
 <main class="projeto-individual">
 
+    <!-- ================= HEADER ================= -->
     <div class="case-header">
-        <h1>Barbearia SaaS — Plataforma Administrativa</h1>
+
+        <h1>Barbearia SaaS</h1>
 
         <p class="projeto-descricao">
-            Plataforma web desenvolvida para proprietários de barbearia gerenciarem
-            agendamentos, equipe, serviços e métricas do negócio.
-            Estruturado como um sistema SaaS escalável, com foco em organização,
-            clareza e visão estratégica.
+            Plataforma administrativa desenvolvida para digitalizar e organizar a operação de barbearias.
+            O sistema centraliza agendamentos, equipe e métricas, oferecendo uma visão estratégica do negócio
+            com foco em eficiência, escalabilidade e tomada de decisão.
         </p>
 
         <div class="tech-badges">
@@ -51,50 +70,96 @@
             <span>SaaS Concept</span>
             <span>UX Estratégico</span>
         </div>
+
     </div>
 
+    <!-- ================= DESAFIO ================= -->
     <section class="case-section">
+
         <h2>Desafio</h2>
+
         <p>
-            A barbearia precisava sair do controle manual de agenda
-            e ganhar previsibilidade operacional.
-            Era necessário centralizar informações, organizar horários
-            e visualizar desempenho da equipe em tempo real.
+            O processo de agendamento era feito manualmente via mensagens,
+            causando conflitos de horário, perda de clientes e falta de controle operacional.
         </p>
+
+        <p>
+            Além disso, não havia visibilidade sobre desempenho da equipe,
+            serviços mais vendidos ou organização da agenda — limitando o crescimento do negócio.
+        </p>
+
     </section>
 
+    <!-- ================= SOLUÇÃO ================= -->
     <section class="case-section">
+
         <h2>Solução</h2>
 
-        <ul class="case-list">
-            <li>Gestão completa de agendamentos</li>
-            <li>Cadastro e controle de barbeiros</li>
-            <li>Configuração dinâmica de serviços e preços</li>
-            <li>Dashboard com métricas estratégicas</li>
-            <li>Controle inteligente de horários disponíveis</li>
-        </ul>
-    </section>
-
-    <section class="case-section">
-        <h2>Visão de Produto</h2>
         <p>
-            O sistema foi estruturado pensando em escalabilidade.
-            A arquitetura permite expansão futura para múltiplas unidades,
-            relatórios financeiros avançados e integração com pagamentos online.
+            Foi projetado um sistema administrativo completo,
+            focado em simplificar a operação e dar autonomia ao gestor.
         </p>
+
+        <ul class="case-list">
+            <li>Gestão centralizada de agendamentos</li>
+            <li>Controle de barbeiros e horários disponíveis</li>
+            <li>Configuração dinâmica de serviços e preços</li>
+            <li>Dashboard com métricas de desempenho</li>
+            <li>Organização clara da agenda em tempo real</li>
+        </ul>
+
     </section>
 
+    <!-- ================= RESULTADO ================= -->
     <section class="case-section">
-        <h2>Galeria</h2>
+
+        <h2>Resultado</h2>
+
+        <p>
+            A solução transforma um processo manual e desorganizado
+            em um fluxo digital estruturado, reduzindo erros operacionais
+            e aumentando a previsibilidade do negócio.
+        </p>
+
+        <p>
+            O sistema permite decisões mais estratégicas,
+            melhora a experiência do cliente e abre caminho
+            para crescimento escalável da operação.
+        </p>
+
+    </section>
+
+    <!-- ================= VISÃO DE PRODUTO ================= -->
+    <section class="case-section">
+
+        <h2>Visão de Produto</h2>
+
+        <p>
+            O projeto foi concebido com mentalidade de produto SaaS,
+            permitindo expansão para múltiplas unidades,
+            relatórios financeiros avançados e integrações futuras com pagamentos online.
+        </p>
+
+    </section>
+
+    <!-- ================= GALERIA ================= -->
+    <section class="case-section">
+
+        <h2>Interface do Sistema</h2>
 
         <div class="case-gallery dashboard-gallery">
-            <img src="assets/images/admin1.png" alt="Dashboard principal">
-            <img src="assets/images/admin2.png" alt="Gestão de barbeiros">
-            <img src="assets/images/admin3.png" alt="Lista de agendamentos">
+
+            <img src="assets/images/admin1.jpg" alt="Dashboard principal do sistema">
+            <img src="assets/images/admin2.jpg" alt="Gestão de barbeiros">
+            <img src="assets/images/admin3.jpg" alt="Lista de agendamentos">
+            <img src="assets/images/admin4.jpg" alt="Visualização de agenda">
+            <img src="assets/images/admin5.jpg" alt="Relatórios e métricas">
+
         </div>
+
     </section>
 
 </main>
 
 </body>
-</html>
+</html> 

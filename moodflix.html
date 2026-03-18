@@ -3,135 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoodFlix | App de Escolha de Filmes</title>
+    <title>MoodFlix | Escolha Inteligente de Filmes</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
+<header>
     <nav class="navbar">
 
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="Logo Gabriel">
-            </a>
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Logo Gabriel">
+        </a>
 
-            <ul class="nav-links" id="navMenu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="index.html#sobre">Sobre</a></li>
-                <li><a href="index.html#projetos">Projetos</a></li>
-                <li><a href="index.html#design">Design</a></li>
-                <li><a href="index.html#contato">Contato</a></li>
-            </ul>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#projetos">Projetos</a></li>
+            <li><a href="index.html#linguagens">Linguagens</a></li>
+            <li><a href="index.html#design">Designs</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <a href="assets/CURRICULOGABRIELTAVARES.pdf" download class="btn-cv">
+                Currículo
+            </a>
 
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+        </div>
 
-        </nav>
-    </header>
+    </nav>
+</header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- ================= MAIN ================= -->
 
 <main class="projeto-individual">
 
-    <h1>MoodFlix — Escolha Inteligente de Filmes</h1>
+    <!-- ================= HEADER ================= -->
+    <div class="case-header">
 
-    <p class="projeto-descricao">
-        Aplicação desenvolvida para resolver um problema comum: 
-        gastar mais tempo escolhendo o filme do que assistindo.
-        O sistema permite que o usuário cadastre seus próprios filmes,
-        organize por categorias baseadas no humor e realize sorteios inteligentes.
-    </p>
+        <span class="section-badge">CASE STUDY</span>
 
-    <div class="tech-badges">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Lógica de Sorteio</span>
-        <span>UX Centrada no Usuário</span>
+        <h1>MoodFlix</h1>
+
+        <p class="projeto-descricao">
+            Aplicação desenvolvida para resolver um problema comum no consumo de entretenimento:
+            a indecisão. O MoodFlix transforma a escolha de filmes em um processo rápido e personalizado,
+            utilizando categorias baseadas no humor e um sistema de sorteio inteligente.
+        </p>
+
+        <div class="tech-badges">
+            <span>JavaScript</span>
+            <span>Lógica de Dados</span>
+            <span>UX Centrada no Usuário</span>
+            <span>Personalização</span>
+        </div>
+
     </div>
 
-    <!-- PROBLEMA -->
+    <!-- ================= PROBLEMA ================= -->
     <section class="case-section">
+
         <h2>Problema</h2>
+
         <p>
-            Usuários frequentemente passam muito tempo decidindo qual filme assistir.
-            Plataformas de streaming oferecem muitas opções, mas pouca personalização
-            baseada no humor específico do momento.
+            Usuários frequentemente gastam mais tempo escolhendo o que assistir
+            do que consumindo o conteúdo em si.
         </p>
+
+        <p>
+            Plataformas de streaming oferecem grande variedade,
+            porém sem considerar o estado emocional do usuário,
+            tornando o processo de decisão cansativo e ineficiente.
+        </p>
+
     </section>
 
-    <!-- SOLUÇÃO -->
+    <!-- ================= SOLUÇÃO ================= -->
     <section class="case-section">
+
         <h2>Solução</h2>
+
         <p>
-            Desenvolvi um sistema onde o próprio usuário constrói sua base de filmes,
-            organizando-os em categorias personalizadas como:
+            O MoodFlix permite que o próprio usuário construa sua base de filmes,
+            organizando-os em categorias personalizadas baseadas no humor e contexto.
         </p>
 
         <ul class="case-list">
-            <li>Filmes para rir</li>
+            <li>Filmes para relaxar</li>
             <li>Filmes para refletir</li>
             <li>Filmes leves</li>
             <li>Filmes intensos</li>
-            <li>Filmes para assistir com amigos</li>
+            <li>Filmes para momentos sociais</li>
         </ul>
 
         <p>
-            A partir dessas categorias, o usuário pode:
+            A partir dessas categorias, o sistema oferece uma experiência dinâmica de escolha:
         </p>
 
         <ul class="case-list">
-            <li>Visualizar a lista completa</li>
-            <li>Filtrar por humor específico</li>
-            <li>Sortear um filme aleatoriamente</li>
-            <li>Gerar uma lista de filmes sorteados em ordem</li>
+            <li>Visualização organizada da biblioteca pessoal</li>
+            <li>Filtragem por humor ou contexto</li>
+            <li>Sorteio inteligente de filmes</li>
+            <li>Geração de listas ordenadas automaticamente</li>
         </ul>
+
     </section>
 
-    <!-- FUNCIONALIDADES -->
+    <!-- ================= LÓGICA (SEU DIFERENCIAL) ================= -->
     <section class="case-section">
-        <h2>Funcionalidades Principais</h2>
 
-        <ul class="case-list">
-            <li>Cadastro de filmes personalizado</li>
-            <li>Criação de categorias baseadas no humor</li>
-            <li>Sistema de sorteio inteligente</li>
-            <li>Histórico de filmes sorteados</li>
-            <li>Interface simples e objetiva</li>
-        </ul>
-    </section>
+        <h2>Lógica do Sistema</h2>
 
-    <!-- DIFERENCIAL -->
-    <section class="case-section">
-        <h2>Diferencial do Projeto</h2>
         <p>
-            Diferente de um simples sorteador, o MoodFlix trabalha com contexto emocional.
-            O usuário define o tipo de experiência que deseja ter e o sistema respeita
-            essa intenção no momento da escolha.
+            O núcleo da aplicação está na manipulação de dados e na lógica de seleção.
+            O sistema utiliza estruturas de arrays, filtragem dinâmica e geração de
+            resultados aleatórios controlados para garantir variedade sem perder relevância.
         </p>
+
+        <p>
+            A lógica foi construída para manter consistência na experiência,
+            evitando repetições frequentes e respeitando o contexto escolhido pelo usuário.
+        </p>
+
     </section>
 
-    <!-- GALERIA -->
+    <!-- ================= DIFERENCIAL ================= -->
     <section class="case-section">
-        <h2>Galeria</h2>
+
+        <h2>Diferencial</h2>
+
+        <p>
+            Diferente de um simples sorteador, o MoodFlix trabalha com intenção.
+            O usuário define o tipo de experiência que deseja,
+            e o sistema adapta a escolha com base nesse contexto.
+        </p>
+
+        <p>
+            Isso transforma uma decisão aleatória em uma recomendação personalizada.
+        </p>
+
+    </section>
+
+    <!-- ================= RESULTADO ================= -->
+    <section class="case-section">
+
+        <h2>Resultado</h2>
+
+        <p>
+            A aplicação reduz significativamente o tempo de decisão,
+            melhora a experiência do usuário e cria uma interação mais objetiva
+            com o conteúdo.
+        </p>
+
+        <p>
+            O sistema também incentiva organização pessoal e reutilização de dados,
+            tornando-se uma ferramenta prática no dia a dia.
+        </p>
+
+    </section>
+
+    <!-- ================= GALERIA ================= -->
+    <section class="case-section">
+
+        <h2>Interface do Sistema</h2>
+
         <div class="case-gallery">
             <img src="assets/images/moodflix1.jpg" alt="Tela inicial do MoodFlix">
             <img src="assets/images/moodflix2.jpg" alt="Lista de filmes cadastrados">
             <img src="assets/images/moodflix3.jpg" alt="Sorteio de filme">
             <img src="assets/images/moodflix4.jpg" alt="Histórico de sorteios">
         </div>
+
     </section>
 
-
-    <!-- APRENDIZADO -->
+    <!-- ================= APRENDIZADO ================= -->
     <section class="case-section">
+
         <h2>Aprendizados</h2>
+
         <p>
-            Esse projeto reforçou conceitos importantes como manipulação de arrays,
-            filtragem de dados, geração de números aleatórios e organização lógica
-            de informações com foco em experiência do usuário.
+            O desenvolvimento do MoodFlix reforçou conceitos fundamentais de lógica de programação,
+            como manipulação de arrays, filtragem de dados e geração de resultados dinâmicos.
         </p>
+
+        <p>
+            Além disso, consolidou a importância de alinhar lógica com experiência do usuário,
+            criando soluções que são não apenas funcionais, mas também úteis e intuitivas.
+        </p>
+
     </section>
 
 </main>
