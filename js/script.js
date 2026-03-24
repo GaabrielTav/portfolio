@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initActiveNav();
     initLightbox();
     initMobileMenu();
+    initDesignViewer();
+    initDesignShowcase();
 
 });
 
@@ -19,29 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function initMobileMenu() {
 
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
 
-if (!menuToggle || !navMenu) return;
+    if (!menuToggle || !navMenu) return;
 
-menuToggle.addEventListener("click", () => {
-
-    navMenu.classList.toggle("active");
-    menuToggle.classList.toggle("active");
-
-});
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-
-        navMenu.classList.remove("active");
-        menuToggle.classList.remove("active");
-
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
     });
-});
 
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+            menuToggle.classList.remove("active");
+        });
+    });
 }
-
 
 
 /* ===================================================
@@ -169,10 +165,9 @@ function initActiveNav() {
     }
 
     window.addEventListener("scroll", updateActiveLink);
-
-    // Executa ao carregar a página
     updateActiveLink();
 }
+
 
 /* ===================================================
    LIGHTBOX
@@ -195,6 +190,7 @@ function initLightbox() {
     });
 
     lightboxClose.addEventListener("click", closeLightbox);
+
     lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) closeLightbox();
     });
@@ -206,132 +202,124 @@ function initLightbox() {
 }
 
 
-/* ================================
-   DESIGN VIEWER COM DESCRIÇÃO
-================================ */
+/* ===================================================
+   DESIGN VIEWER
+=================================================== */
 
-const designItems = document.querySelectorAll(".design-item");
-const viewer = document.getElementById("designViewer");
-const viewerImg = document.querySelector(".viewer-img");
-const viewerTitle = document.querySelector(".viewer-title");
-const viewerDesc = document.querySelector(".viewer-desc");
-const viewerClose = document.querySelector(".viewer-close");
-const viewerNext = document.querySelector(".viewer-next");
-const viewerPrev = document.querySelector(".viewer-prev");
+function initDesignViewer() {
 
-let currentDesignIndex = 0;
-let designData = [];
+    const designItems = document.querySelectorAll(".design-item");
+    const viewer = document.getElementById("designViewer");
+    const viewerImg = document.querySelector(".viewer-img");
+    const viewerTitle = document.querySelector(".viewer-title");
+    const viewerDesc = document.querySelector(".viewer-desc");
+    const viewerClose = document.querySelector(".viewer-close");
+    const viewerNext = document.querySelector(".viewer-next");
+    const viewerPrev = document.querySelector(".viewer-prev");
 
-designItems.forEach((item, index) => {
-    designData.push({
-        img: item.getAttribute("data-img"),
-        title: item.getAttribute("data-title"),
-        desc: item.getAttribute("data-desc")
+    if (!viewer || !viewerImg || !viewerTitle || !viewerDesc) return;
+
+    let currentDesignIndex = 0;
+    let designData = [];
+
+    designItems.forEach((item, index) => {
+        designData.push({
+            img: item.getAttribute("data-img"),
+            title: item.getAttribute("data-title"),
+            desc: item.getAttribute("data-desc")
+        });
+
+        item.addEventListener("click", () => {
+            currentDesignIndex = index;
+            openViewer();
+        });
     });
 
-    item.addEventListener("click", () => {
-        currentDesignIndex = index;
-        openViewer();
+    function openViewer() {
+        viewer.classList.add("active");
+        updateViewer();
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeViewer() {
+        viewer.classList.remove("active");
+        document.body.style.overflow = "auto";
+    }
+
+    function updateViewer() {
+        viewerImg.src = designData[currentDesignIndex].img;
+        viewerTitle.textContent = designData[currentDesignIndex].title;
+        viewerDesc.textContent = designData[currentDesignIndex].desc;
+    }
+
+    function nextImage() {
+        currentDesignIndex = (currentDesignIndex + 1) % designData.length;
+        updateViewer();
+    }
+
+    function prevImage() {
+        currentDesignIndex =
+            (currentDesignIndex - 1 + designData.length) % designData.length;
+        updateViewer();
+    }
+
+    viewerNext?.addEventListener("click", nextImage);
+    viewerPrev?.addEventListener("click", prevImage);
+    viewerClose?.addEventListener("click", closeViewer);
+
+    viewer.addEventListener("click", (e) => {
+        if (e.target === viewer) closeViewer();
     });
-});
 
-function openViewer() {
-    viewer.classList.add("active");
-    updateViewer();
-    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", (e) => {
+        if (!viewer.classList.contains("active")) return;
+
+        if (e.key === "ArrowRight") nextImage();
+        if (e.key === "ArrowLeft") prevImage();
+        if (e.key === "Escape") closeViewer();
+    });
 }
 
-function closeViewer() {
-    viewer.classList.remove("active");
-    document.body.style.overflow = "auto";
-}
 
-function updateViewer() {
-    viewerImg.src = designData[currentDesignIndex].img;
-    viewerTitle.textContent = designData[currentDesignIndex].title;
-    viewerDesc.textContent = designData[currentDesignIndex].desc;
-}
-
-function nextImage() {
-    currentDesignIndex = (currentDesignIndex + 1) % designData.length;
-    updateViewer();
-}
-
-function prevImage() {
-    currentDesignIndex =
-        (currentDesignIndex - 1 + designData.length) % designData.length;
-    updateViewer();
-}
-
-viewerNext.addEventListener("click", nextImage);
-viewerPrev.addEventListener("click", prevImage);
-viewerClose.addEventListener("click", closeViewer);
-
-viewer.addEventListener("click", (e) => {
-    if (e.target === viewer) closeViewer();
-});
-
-document.addEventListener("keydown", (e) => {
-    if (!viewer.classList.contains("active")) return;
-
-    if (e.key === "ArrowRight") nextImage();
-    if (e.key === "ArrowLeft") prevImage();
-    if (e.key === "Escape") closeViewer();
-});
-
-
-/* ================================
+/* ===================================================
    DESIGN SHOWCASE
-================================ */
+=================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+function initDesignShowcase() {
 
-const images = [
-    "assets/design/design-desc1.jpg",
-    "assets/design/design-desc2.jpg",
-    "assets/design/design-desc3.jpg",
-    "assets/design/design-desc4.jpg",
-    "assets/design/design-desc5.jpg"
-];
+    const images = [
+        "assets/design/design-desc1.jpg",
+        "assets/design/design-desc2.jpg",
+        "assets/design/design-desc3.jpg",
+        "assets/design/design-desc4.jpg",
+        "assets/design/design-desc5.jpg"
+    ];
 
-let currentIndex = 0;
+    let currentIndex = 0;
 
-const imgElement = document.getElementById("design-image");
-const prevBtn = document.querySelector(".design-prev");
-const nextBtn = document.querySelector(".design-next");
+    const imgElement = document.getElementById("design-image");
+    const prevBtn = document.querySelector(".design-prev");
+    const nextBtn = document.querySelector(".design-next");
 
-function updateImage() {
-    imgElement.src = images[currentIndex];
-}
+    if (!imgElement || !prevBtn || !nextBtn) return;
 
-nextBtn.addEventListener("click", () => {
-    currentIndex++;
+    function updateImage() {
+        imgElement.style.opacity = 0;
 
-    if (currentIndex >= images.length) {
-        currentIndex = 0;
+        setTimeout(() => {
+            imgElement.src = images[currentIndex];
+            imgElement.style.opacity = 1;
+        }, 200);
     }
 
-    updateImage();
-});
+    nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    });
 
-prevBtn.addEventListener("click", () => {
-    currentIndex--;
+    prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
 
-    if (currentIndex < 0) {
-        currentIndex = images.length - 1;
-    }
-
-    updateImage();
-});
-
-
-function updateImage() {
-    imgElement.style.opacity = 0;
-
-    setTimeout(() => {
-        imgElement.src = images[currentIndex];
-        imgElement.style.opacity = 1;
-    }, 200);
 }
-
-});
