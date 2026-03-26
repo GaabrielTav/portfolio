@@ -781,14 +781,15 @@ color: #e6e6e6;
 /* Container */
 
 .sobre-container {
-    width: 90%;
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
+    
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 80px;
+    gap: 250px;
 }
 
 /* Texto */
@@ -2174,4 +2175,224 @@ backdrop-filter:blur(6px);
         gap: 25px;
     }
 
+}
+
+
+/* ===================================================
+   PÁGINA PESSOAL - BASE (GLOBAL)
+=================================================== */
+
+.pagina-pessoal {
+    padding: 140px 10% 100px;
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+/* FUNDO COM LUZ */
+
+.pagina-pessoal::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(197,168,128,0.12), transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
+}
+
+.pagina-pessoal::after {
+    content: "";
+    position: absolute;
+    bottom: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(197,168,128,0.08), transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
+}
+
+.pagina-pessoal > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===================================================
+   HEADER
+=================================================== */
+
+.pagina-header {
+    margin-bottom: 80px;
+}
+
+.pagina-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.pagina-header h1::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #c5a880;
+    display: block;
+    margin-top: 15px;
+}
+
+.pagina-header .intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    max-width: 700px;
+}
+
+/* ===================================================
+   CONTEÚDO
+=================================================== */
+
+.pagina-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* PARÁGRAFOS */
+
+.pagina-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    opacity: 0.85;
+    max-width: 720px;
+}
+
+/* TÍTULOS */
+
+.pagina-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #c5a880;
+    position: relative;
+}
+
+.pagina-content h2::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: #c5a880;
+    border-radius: 50%;
+}
+
+/* ===================================================
+   LISTA DE CONQUISTAS
+=================================================== */
+
+.conquistas {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+
+    display: grid;
+    gap: 12px;
+}
+
+.conquistas li {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+
+    padding: 14px 18px;
+    border-radius: 12px;
+
+    transition: 0.3s ease;
+}
+
+.conquistas li:hover {
+    border-color: rgba(197,168,128,0.4);
+    transform: translateX(6px);
+}
+
+/* ===================================================
+   BLOCO DE CTA
+=================================================== */
+
+.cta-pessoal {
+    margin-top: 40px;
+}
+
+.btn-contato {
+    display: inline-block;
+
+    padding: 14px 28px;
+    border-radius: 30px;
+
+    border: 1px solid #c5a880;
+    color: #c5a880;
+
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.btn-contato:hover {
+    background: #c5a880;
+    color: #000;
+
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(197,168,128,0.3);
+}
+
+/* ===================================================
+   SEPARAÇÃO VISUAL ENTRE BLOCOS
+=================================================== */
+
+.pagina-content h2 + p,
+.pagina-content h2 + ul {
+    margin-top: -10px;
+}
+
+/* ===================================================
+   RESPONSIVO
+=================================================== */
+
+@media (max-width: 768px) {
+
+    .pagina-pessoal {
+        padding: 120px 20px 80px;
+    }
+
+    .pagina-header h1 {
+        font-size: 2rem;
+    }
+
+    .pagina-header .intro {
+        font-size: 1rem;
+    }
+
+    .pagina-content {
+        gap: 35px;
+    }
+
+    .pagina-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .pagina-content p {
+        font-size: 0.95rem;
+    }
+
+    .conquistas li {
+        padding: 12px 14px;
+    }
+
+    .btn-contato {
+        width: 100%;
+        text-align: center;
+    }
 }
