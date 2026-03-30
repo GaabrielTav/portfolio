@@ -1360,81 +1360,143 @@ font-size:0.95rem;
 
 
 
+
 /* ===================================================
-    STACK - BASE (GLOBAL)
+   STACK - PREMIUM
 =================================================== */
 
-
-.stack{
-
-padding:120px 10%;
-background:#0d0d0d;
-
+.stack {
+    padding: 120px 10%;
+    background: #0d0d0d;
+    position: relative;
 }
 
-.stack-container{
+/* container */
 
-max-width:1000px;
-margin:auto;
-text-align:center;
-
+.stack-container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
 }
 
-.stack h2{
+/* título */
 
-margin-top:20px;
-margin-bottom:60px;
-
-font-size:2.4rem;
-
+.stack h2 {
+    margin-top: 20px;
+    margin-bottom: 70px;
+    font-size: 2.4rem;
 }
 
-.stack-group{
+/* ===================================================
+   GRID (estrutura principal)
+=================================================== */
 
-margin-bottom:50px;
-
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
-.stack-group h3{
+/* ===================================================
+   CARD (cada grupo)
+=================================================== */
 
-margin-bottom:20px;
-color:#c5a880;
-font-size:1.2rem;
-letter-spacing:1px;
+.stack-card {
+    padding: 30px 25px;
+    border-radius: 18px;
 
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(6px);
+
+    transition: all 0.3s ease;
 }
 
-.stack-items{
-
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-
-gap:18px;
-
+.stack-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(197,168,128,0.3);
 }
 
-.stack-items span{
+/* título do grupo */
 
-border:1px solid rgba(197,168,128,0.6);
-
-padding:12px 26px;
-
-border-radius:8px;
-
-font-size:14px;
-
-letter-spacing:1px;
-
-transition:0.3s;
-
+.stack-card h3 {
+    margin-bottom: 20px;
+    color: #c5a880;
+    font-size: 1rem;
+    letter-spacing: 1px;
 }
 
-.stack-items span:hover{
+/* ===================================================
+   ITENS
+=================================================== */
 
-background:#c5a880;
-color:#000;
-transform:translateY(-3px);
+.stack-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.stack-items span {
+    border: 1px solid rgba(197,168,128,0.5);
+
+    padding: 10px 18px;
+    border-radius: 20px;
+
+    font-size: 13px;
+    letter-spacing: 0.5px;
+
+    background: rgba(197,168,128,0.05);
+
+    transition: all 0.25s ease;
+}
+
+/* hover refinado */
+
+.stack-items span:hover {
+    background: #c5a880;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(197,168,128,0.25);
+}
+
+/* ===================================================
+   RESPONSIVO (MOBILE)
+=================================================== */
+
+@media (max-width: 900px) {
+
+    .stack {
+        padding: 100px 20px;
+    }
+
+    .stack h2 {
+        font-size: 1.9rem;
+        margin-bottom: 50px;
+    }
+
+    .stack-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .stack-card {
+        padding: 25px 20px;
+    }
+
+    .stack-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .stack-items {
+        gap: 10px;
+    }
+
+    .stack-items span {
+        font-size: 12px;
+        padding: 8px 14px;
+    }
 
 }
 
